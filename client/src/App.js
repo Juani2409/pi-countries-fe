@@ -1,8 +1,9 @@
 import './App.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import LandingPage from './components/LandingPage'
-import Home from './components/home';
-
+import LandingPage from './components/LandingPage/LandingPage'
+import Home from './components/Home/home';
+import { CreateActivity } from './components/CreateActivity/CreateActivity';
+import Detail from './components/Detail/detail';
 
 function App() {
   return (
@@ -11,8 +12,8 @@ function App() {
       <Switch>
         <Route exact path= '/' component= {LandingPage}/>
         <Route path= "/home" component= {Home}/>
-        {/* <Route path= '/activities' component= {ActivitiesCreate}/>
-        <Route path= "/countries/:id" component= {Detail}/> */}
+        <Route path= '/activities' component= {CreateActivity}/>
+        <Route path= "/countries/:id" component= {Detail}/>
       </Switch>
       {/* <h1>Henry Countries</h1> */}
     </div>

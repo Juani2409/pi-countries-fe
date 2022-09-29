@@ -1,7 +1,9 @@
 
 const intialState = {
     countries: [],
-    allCountry: []
+    allCountry: [],
+    activities: [],
+    detail: [],
 }
 
 function rootReducer(state = intialState, action) {
@@ -12,6 +14,11 @@ function rootReducer(state = intialState, action) {
                 ...state,
                 countries: action.payload,
                 allCountry: action.payload
+            }
+        case 'GET_NAME_COUNTRIES':
+            return {
+                ...state,
+                countries: action.payload
             }
 
 
@@ -84,6 +91,29 @@ function rootReducer(state = intialState, action) {
             }
 
 
+        case 'GET_ACTIVITIES':
+            return {
+                ...state,
+                activities: action.payload
+            }
+
+        case "POST_ACTIVITY":
+            return {
+                ...state,
+            }
+
+
+        case 'FILTER_BY_ACTIVITY':
+            {
+                const allCountries = state.allCountry
+                const statusFiltered = action.payload === 'All' ? allCountries : allCountries.filter(el => el.Activities && el.Activities.length > 0 && el.Activities.filter(a => a.id == action.payload).length > 0)
+                console.log(statusFiltered)
+                return {
+                    ...state,
+                    countries: statusFiltered
+                }
+            }
+
         //          case 'FILTER_CREATED':
         //             const allCountries = state.allCountries
         //             const createdFilter = action.payload === 'activities' ? allCountries.filter(el => el.createdInDb) : allCountries.filter(el => !el.createdInDb)
@@ -91,12 +121,17 @@ function rootReducer(state = intialState, action) {
         //     ...state,
         //     countries: action.payload === 'activities' state.allCountries
         //    }
+        case "GET_DETAILS":
+            return {
+                ...state,
+                detail: action.payload
+            }
+
+
+
         default:
             return state;
     }
-
-
-
 
 }
 

@@ -1,0 +1,36 @@
+.paginado ul{
+list-style: none;
+display: inline-block;
+
+
+}
+.number{
+    display: inline-block;
+    margin: 3px;
+    border-radius: 20%;
+   color:aliceblue;
+    border: 3px solid rgb(168, 148, 148);
+    background: rgba(168, 148, 148, 0.5) ;
+    /* text-decoration: none; */
+    padding: 1px;
+    width: 30px;
+    height: 30px;
+    text-align: center center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+.number:hover{
+background-color: rgb(168, 148, 148);
+color: rgb(251, 251, 251);
+border: none;
+
+}
+
+.number:focus{
+    outline: none; 
+    background-color: rgb(58, 58, 106);
+    color: rgb(245, 249, 249);
+    
+}
