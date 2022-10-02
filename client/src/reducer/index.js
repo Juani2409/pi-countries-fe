@@ -62,6 +62,8 @@ function rootReducer(state = intialState, action) {
                 countries: sortedArr
             }
 
+
+
         case 'ORDER_BY_POPULATION':
             let sortedPob = action.payload === 'ascPob' ?
                 state.countries.sort(function (a, b) {
@@ -106,7 +108,7 @@ function rootReducer(state = intialState, action) {
         case 'FILTER_BY_ACTIVITY':
             {
                 const allCountries = state.allCountry
-                const statusFiltered = action.payload === 'All' ? allCountries : allCountries.filter(el => el.Activities && el.Activities.length > 0 && el.Activities.filter(a => a.id == action.payload).length > 0)
+                const statusFiltered = action.payload === 'All' ? allCountries : allCountries.filter(el => el.Activities && el.Activities.length > 0 && el.Activities.filter(a => a.name == action.payload).length > 0)
                 console.log(statusFiltered)
                 return {
                     ...state,
@@ -114,13 +116,7 @@ function rootReducer(state = intialState, action) {
                 }
             }
 
-        //          case 'FILTER_CREATED':
-        //             const allCountries = state.allCountries
-        //             const createdFilter = action.payload === 'activities' ? allCountries.filter(el => el.createdInDb) : allCountries.filter(el => !el.createdInDb)
-        //    return{
-        //     ...state,
-        //     countries: action.payload === 'activities' state.allCountries
-        //    }
+   
         case "GET_DETAILS":
             return {
                 ...state,
@@ -136,3 +132,24 @@ function rootReducer(state = intialState, action) {
 }
 
 export default rootReducer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     //          case 'FILTER_CREATED':
+        //             const allCountries = state.allCountries
+        //             const createdFilter = action.payload === 'activities' ? allCountries.filter(el => el.createdInDb) : allCountries.filter(el => !el.createdInDb)
+        //    return{
+        //     ...state,
+        //     countries: action.payload === 'activities' state.allCountries
+        //    }

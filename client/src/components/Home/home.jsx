@@ -33,9 +33,12 @@ export default function Home() {
     }, [dispatch])
 
     function handleClick(e) {
+        window.location.reload()
         e.preventDefault()
         dispatch(getCountries())
     }
+
+
     function handleFilterName(e) {
         console.log(e)
         dispatch(filterCountriesByContinent(e.target.value))
@@ -61,38 +64,41 @@ export default function Home() {
     }
 
 
+    
+        let juani= [...new Set(allActivities.map(a => a.name ))]//solo permite que se cree una vex el name 
+        
 
     return (
 
-
-        <div className="home">
-
-
-
-
+        <div className="full">
+            
+            <p className="header">Bienvenidos a Countries</p>
+            <div className="Barradetareas">
             <Link to='/activities'>
                 <button className="boton">Crear Actividades</button>
             </Link>
             {/* <h1>Los paises</h1> */}
-            <button className="boton2" onClick={e => { handleClick(e) }}>Cargar los Paises</button>
-
+            <SearchBar />
+            <button className="boton" onClick={e => { handleClick(e) }}>Refrescar</button>
+                        </div>
             <div>
-                <div>
+                <div className="filter_bar">
                     {/* <h2>Filtros</h2> */}
-                    <SearchBar />
-                    <select onChange={e => handleSort(e)} >
+
+                      <div className="filtros">                    
+                    <select className="filtros" onChange={e => handleSort(e)} >
                         <option disabled selected>Alfabético</option>
                         <option value='asc' >A - Z</option>
                         <option value='desc'>Z - A</option>
                     </select>
 
-                    <select onChange={e => handleSortPob(e)}>
+                    <select className="filtros" onChange={e => handleSortPob(e)}>
                         <option disabled selected>Población</option>
                         <option value='ascPob'>Menor población</option>
                         <option value='descPob'>Mayor población</option>
                     </select>
 
-                    <select onChange={e => handleFilterName(e)}>//volver a 0
+                    <select className="filtros" onChange={e => handleFilterName(e)}>//volver a 0
                         <option disabled selected>Continente</option>
                         <option value="All">Todos</option>
                         <option value="South America">Sur-America</option>
@@ -104,17 +110,23 @@ export default function Home() {
                         <option value="Antarctica">Antartida</option>
 
                     </select>
-                    <select onChange={e => handleFilterAct(e)}>
+                    <select className="filtros" onChange={e => handleFilterAct(e)}>
                         <option disabled selected>Actividades</option>
                         <option value="All"> Todas </option>
 
 
-
-                        {allActivities.map((a) => (
-                            <option value={a.id}>{a.name}</option>
+                        {juani.map((a) => (
+                            <option value={a}>{a}</option>
                         ))}
 
+
+
+
+
+
+
                     </select>
+                    </div>
                 </div>
 
                 <Paginado
@@ -128,9 +140,10 @@ export default function Home() {
 
 
                 {currentCountries?.map((e) => {
-                    return (<div className="style" >
-                        <Link>
-                            <Card name={e.name} 
+                    return (<div className="style">
+                        <Link style={{textDecoration: 'none'}}>
+                            <Card 
+                            name={e.name} 
                             image={e.flags} 
                             continents={e.continents} 
                             id={e.id} />

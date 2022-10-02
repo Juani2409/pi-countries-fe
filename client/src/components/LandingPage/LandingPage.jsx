@@ -12,7 +12,7 @@ export default function LandingPage() {
                 <button className="button">Explorar</button>
             </Link>  
             {/* <p className='info'> Esta aplicación contine información muy importante de todos los países y podrás incluirle actividades</p> */}
-            <div className='nombre'> <h2> Por :  Juan Ignacio Grodz</h2></div>
+            <div className='Lnombre'> <h2> Por :  Juan Ignacio Grodz</h2></div>
         </div>
        
     )

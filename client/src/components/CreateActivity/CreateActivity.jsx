@@ -101,17 +101,16 @@ export function CreateActivity() {
 
 
     function handleChange(e) {
+        
         setInput({
             ...input,
             [e.target.name]: e.target.value
         })
-        // setErrors(validate({
-        //     ...input,
-        //     [e.target.name]: e.target.value
-        // }))
+      
     }
 
     function handleError(e) {
+       
         setErrors(validate({
             ...input,
             [e.target.name]: e.target.value
@@ -132,8 +131,8 @@ export function CreateActivity() {
             <h1>Crea una actividad</h1>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div>
-                    <label>Nombre :  </label>
-                    <input className={errors.name && 'error'}
+                    <label>Nombre:</label>
+                    <input className={errors.name}
                         type="text"
                         value={input.name}
                         name="name"
@@ -146,7 +145,7 @@ export function CreateActivity() {
                 <div>
 
                     <label  >Duración en minutos :</label>
-                    <input onKeyPress={false} className={errors.duration && 'error'}
+                    <input onKeyPress={false} className={errors.duration}
                         placeholder="1-100"
 
                         type="number" min="1" max="100"
@@ -160,7 +159,7 @@ export function CreateActivity() {
                 <div>
                     <label>Dificultad </label>
                     <select
-                        className={errors.difficulty && 'error'}
+                        className={errors.difficulty}
                         name="difficulty"
                         onChange={(e) => handleChange(e)}
                         required>
@@ -178,32 +177,32 @@ export function CreateActivity() {
                 <div>
                     <label>Estacion:</label>
 
-                    <label><input className={errors.season && 'error'}
+                    <label><input className={errors.season}
                         type="radio"
                         name="season"
-                        value="Winter"
+                        value="Invierno"
                         onChange={(e) => handleChange(e)}
                     />Invierno</label>
 
-                    <label><input className={errors.season && 'error'}
+                    <label><input className={errors.season}
                         type="radio"
                         name="season"
-                        value="Autumn"
+                        value="Otoño"
                         onChange={(e) => handleChange(e)}
                     />Otoño</label>
 
 
-                    <label><input className={errors.season && 'error'}
+                    <label><input className={errors.season}
                         type="radio"
                         name="season"
-                        value="Summer"
+                        value="Verano"
                         onChange={(e) => handleChange(e)}
                     />Verano</label>
 
-                    <label><input className={errors.season && 'error'}
+                    <label><input className={errors.season}
                         type="radio"
                         name="season"
-                        value="Spring"
+                        value="Primavera"
                         onChange={(e) => handleChange(e)}
                     />Primavera</label>
 

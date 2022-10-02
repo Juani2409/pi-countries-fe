@@ -47,6 +47,10 @@
 }
 
 .error {
-    color: rgb(255, 243, 110);
+    color: rgb(250, 233, 40);
     
+}
+.nombre {
+    margin-top: 30px;
+   color:rgb(1, 4, 8)
 }

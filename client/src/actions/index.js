@@ -66,6 +66,11 @@ export function getNameCountries(name) {
                 payload: json.data
             })
         } catch (error) {
+            alert('NO SE ENCONTRÓ EL PAIS QUE ESTÁ BUSCANDO')
+            return dispatch({
+                type: "GET_NAME_COUNTRIES",
+                payload: []
+            })
 
         }
     }

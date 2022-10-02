@@ -1,54 +1,46 @@
-
-.boton2{
-    margin-top: 20px;
-    margin-left: 10px;
-    background-color: transparent;
-    color: white;
-    width: 150px;
-    height:65px;
-    border-radius:15%;
-    cursor: pointer;
-    font-size: 1.5em;
+.full{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.header{
+    text-decoration: none;
     font-weight: bold;
+    background-color: rgb(3, 3, 7);
+    color: aliceblue;
+}
+.filter_bar{
+    background-color: transparent;
     
-    border: 3px solid rgb(168, 148, 148);
+}
+
+.filtros{
+    margin-left: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 
 }
-
-.boton2:hover{
-background-color: rgb(8, 8, 8);
-color: rgb(251, 251, 251);
-border: 3px solid rgb(255, 255, 255);
+.Barradetareas{
+    display:inline-flex;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    
 }
-
-
-
-
-
 .boton {
-background-color: transparent;
-color: white;
-width: 150px;
-height:65px;
-border-radius:15%;
-cursor: pointer;
-font-size: 1.5em;
-font-weight: bold;
-
-border: 3px solid rgb(168, 148, 148);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: aliceblue;
+    background: rgb(168, 148, 148);
+    padding: 5px 10px;
+    border: none;
+    color:#fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-left: 20px;
 }
-
-
-
-
-
 
 .boton:hover{
-    background-color: rgb(8, 8, 8);
-color: rgb(251, 251, 251);
-
-border: 3px solid rgb(255, 255, 255);
+    outline: none; 
+    background-color: rgb(58, 58, 106);
+    color: rgb(245, 249, 249);
+    
 }
 
 
@@ -58,6 +50,8 @@ border: 3px solid rgb(255, 255, 255);
     margin: 3px;
     width: 150px;
     height:65px;
+    text-emphasis: none;
+    text-decoration: none;
     }
 
 

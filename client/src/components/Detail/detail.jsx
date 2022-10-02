@@ -30,7 +30,8 @@ export default function Detail(props) {
                         <h2> Población: {myCountry[0].population}</h2>
                         <h2><ul className="ulActividades"> Actividades:
 
-                            {myCountry[0].Activities.map(el => <li>{el.name}</li>)}
+                            {myCountry[0].Activities.map(el => <li>{el.name + ': '}  {`Dificultad = ${el.difficulty + '  - '}`}  
+                            {`Estación del año = ${el.season + ' -  '}`}  {`Duración = ${el.duration}`}  </li>)}
 
                         </ul></h2>
 
